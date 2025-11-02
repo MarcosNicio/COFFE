@@ -111,24 +111,17 @@ a:hover {
     padding: 20px 0;
 
 }
-.banner{
-    background-image: url(https://i.pinimg.com/originals/2c/09/cc/2c09ccc80ef0173d1aeedef893b6c463.png);
-}
+
 
 .fondo{
     /* --- La imagen de fondo --- */
     background-image: url('https://i.pinimg.com/originals/2c/09/cc/2c09ccc80ef0173d1aeedef893b6c463.png'); /* <-- Reemplaza con tu imagen */
-    
-    /* --- Hacemos que la imagen se vea bien --- */
+  
     background-size: cover;      /* Cubre todo el espacio */
     background-position: center; /* Centra la imagen */
 
-    /* --- ESTILOS EXTRA (MUY RECOMENDADOS) --- */
-    
-    /* 1. Damos espacio para que la imagen se vea */
     padding: 50px 50px; 
-    
-    /* 2. Hacemos que el texto sea legible sobre la imagen */
+
     color: white; /* Color de texto blanco */
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Sombra para contraste */
     
@@ -313,7 +306,6 @@ a:hover {
     margin: 0 auto;
 }
 
-/* --- Encabezado (Flexbox) --- */
 .process-header {
     display: flex;
     justify-content: space-between; /* Los empuja a los lados */
@@ -362,7 +354,7 @@ a:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.card-icon {
+.icono {
     height: 60px; /* Ajusta el tamaño de tu icono */
     margin-bottom: 20px;
 }
@@ -389,7 +381,7 @@ a:hover {
     position: relative; /* Para posicionar el "Scroll Down" */
 }
 
-.section-title {
+.title-flav {
     text-align: center;
     font-size: 28px;
     font-weight: 700;
@@ -400,14 +392,14 @@ a:hover {
 }
 
 /* --- Rejilla de Productos (Flexbox) --- */
-.products-grid {
+.productos {
     display: flex;
     gap: 30px;
     align-items: flex-end; /* Alinea las tarjetas por la parte inferior */
 }
 
 /* --- Estilo Base de la Tarjeta --- */
-.product-card {
+.tarjeta {
     flex-grow: 1; /* Crece para ocupar espacio */
     flex-basis: 20%; /* Inicia en 20% del ancho */
     border-radius: 12px;
@@ -433,7 +425,7 @@ a:hover {
     font-weight: 700;
 }
 
-.product-image-container {
+.imagen_producto {
     padding: 20px;
     display: flex;
     justify-content: center;
@@ -441,16 +433,16 @@ a:hover {
     background-color: #ffffff;
 }
 
-.product-image-container img {
+.imagen_producto img {
     max-width: 150px;
     height: auto;
 }
 
-.product-card-content {
+.tarjeta-content {
     padding: 0 20px;
 }
 
-.product-card-content h3 {
+.tarjeta-content h3 {
     font-size: 14px;
     font-weight: 600;
     color: #333;
@@ -459,7 +451,7 @@ a:hover {
     margin-bottom: 10px;
 }
 
-.product-price {
+.precio_producto {
     display: block;
     font-size: 18px;
     font-weight: 700;
@@ -467,7 +459,7 @@ a:hover {
     margin-bottom: 20px;
 }
 
-.add-to-cart-btn {
+.comprar_btn {
     background-color: transparent;
     border: 2px solid #e0ac7a;
     color: #e0ac7a;
@@ -478,27 +470,234 @@ a:hover {
     font-size: 12px;
     text-transform: uppercase;
 }
-
-/* --- Estilo de la Tarjeta Destacada --- */
-
-
-.product-card.featured .product-image-container {
-    background-color: #4b3832; /* Fondo marrón oscuro */
-}
-
-.product-card.featured .product-image-container img {
-    max-width: 280px; /* Imagen más grande */
-}
-
-.product-card.featured .product-card-content {
-    background-color: #e0ac7a; /* Fondo marrón claro */
-    padding-bottom: 20px;
-}
-
-
-.product-card.featured .add-to-cart-btn {
+.tarjeta.destacado .comprar_btn {
     background-color: #4b3832; /* Botón oscuro */
     border-color: #4b3832;
     color: #ffffff; /* Texto claro */
 }
 
+/* --- Estilo de la Tarjeta Destacada --- */
+
+
+.tarjeta.destacado .imagen_producto {
+    background-color: #4b3832; /* Fondo marrón oscuro */
+}
+
+.tarjeta.destacado .imagen_producto img {
+    max-width: 280px; /* Imagen más grande */
+}
+
+.tarjeta.destacado .tarjeta-content {
+    background-color: #e0ac7a; /* Fondo marrón claro */
+    padding-bottom: 20px;
+}
+
+
+.tarjeta.destacado .comprar_btn {
+    background-color: #4b3832; /* Botón oscuro */
+    border-color: #4b3832;
+    color: #ffffff; /* Texto claro */
+}
+
+/****************************/
+
+.newsletter-section {
+    background-color: #f4f4f4; /* Fondo gris claro de la sección */
+    width: 100%;
+    max-width: 1200px;
+    border-radius: 15px;
+    padding: 60px 40px;
+    overflow: hidden; /* Evita que los granos se salgan */
+}
+
+.newsletter-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+/* --- Columna Izquierda (Texto) --- */
+.newsletter-text {
+    flex: 1; /* Ocupa la mitad del espacio */
+    padding-right: 20px;
+}
+
+.newsletter-text h2 {
+    font-size: 34px;
+    font-weight: 700;
+    color: #333;
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
+
+.newsletter-text p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* --- Formulario de Suscripción --- */
+.formulario {
+    display: flex;
+    background-color: #4b3832; /* Marrón oscuro */
+    border-radius: 10px;
+    padding: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.formulario input {
+    flex-grow: 1; /* El input ocupa todo el espacio sobrante */
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 12px 15px;
+    color: #ffffff; /* Color del texto que se escribe */
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Estilo para el texto "Your Email..." */
+.formulario input::placeholder {
+    color: #e0ac7a; /* Marrón claro */
+    opacity: 0.8;
+}
+
+.formulario button {
+    background-color: #e0ac7a; /* Marrón claro */
+    border: none;
+    border-radius: 8px;
+    color: #4b3832; /* Marrón oscuro */
+    padding: 0 30px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.formulario button:hover {
+    background-color: #d19a6a; /* Un poco más oscuro */
+}
+
+/* --- Columna Derecha (Imágenes) --- */
+.newsletter-images {
+    flex: 1; /* Ocupa la otra mitad */
+    position: relative; /* Clave para posicionar los granos */
+    min-height: 400px; /* Le da altura */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* --- Posicionamiento de Imágenes --- */
+.product-bag {
+    position: relative; /* O 'absolute' si se prefiere */
+    z-index: 10;
+    max-width: 200px;
+}
+
+.product-cup {
+    position: absolute;
+    z-index: 15;
+    max-width: 100px;
+    bottom: 70px; /* Ajusta esto basado en tus imágenes */
+    right: 140px; /* Ajusta esto basado en tus imágenes */
+}
+
+/**/
+
+.pie_pagina {
+    background-color: #4b3832; 
+    color: #ffffff; 
+    padding: 60px 5%; 
+}
+
+/* Columnas */
+.pie_contenedor {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px; /* Espacio entre columnas */
+    margin-bottom: 40px;
+}
+
+.columna {
+    flex: 1; 
+    min-width: 200px; 
+}
+
+
+.columna.about {
+    flex: 2; 
+    min-width: 300px;
+}
+
+
+.columna h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.columna h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.columna.about p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+
+.columna ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.columna ul li {
+    margin-bottom: 12px;
+    font-size: 15px;
+}
+
+.columna ul a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+/* --- Estilo de la Columna de Contacto --- */
+.footer-column.contact li {
+    display: flex;
+    align-items: flex-start; /* Alinea el icono con la primera línea de texto */
+    line-height: 1.6;
+}
+
+.footer-column.contact .icon {
+    margin-right: 12px;
+    font-size: 16px;
+    color: #e0ac7a; /* Color de los iconos */
+    margin-top: 4px; /* Pequeño ajuste vertical */
+}
+
+
+.derechos {
+    border: none;
+    border-top: 2px solid #ffffff;
+    opacity: 0.3; /* La hace más sutil */
+    margin: 0 auto 25px; /* Centra y da espacio */
+}
+
+.pie-abajo p {
+    margin: 0;
+    font-size: 14px;
+    color: #d19a6a;
+}
